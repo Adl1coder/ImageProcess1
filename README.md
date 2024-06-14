@@ -23,17 +23,17 @@ Bu uygulama, kullanıcıların görüntüleri işlemelerine ve analiz etmelerine
 2. **İşlemleri Uygulama**: Seçilen görüntü üzerinde istediğiniz işlemleri seçin ve uygulayın.
 3. **Sonuçları Görselleştirme**: Her işlem sonrası güncellenmiş görüntüyü görsel olarak inceleyin.
 
-## Örnek Kullanım
+## Örnek 
 
 ```python
-# Örnek Python kodu buraya eklenebilir, örneğin gürültü ekleme veya filtreleme işlemi.
+
 import cv2
 import numpy as np
 
-# Görüntüyü yükle
+
 image = cv2.imread('image.jpg')
 
-# Tuz-biber gürültüsü ekle
+
 noise = np.zeros(image.shape, np.uint8)
 cv2.randu(noise, 0, 255)
 salt = noise > 245
@@ -41,7 +41,6 @@ pepper = noise < 10
 image[salt] = 255
 image[pepper] = 0
 
-# Sonucu göster
 cv2.imshow('Noisy Image', image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
